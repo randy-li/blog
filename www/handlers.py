@@ -16,8 +16,10 @@ from models import User, Comment, Blog, next_id
 
 @get('/')
 async def index(request):
-    users = await User.findAll()
+    summary = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ' \
+              'et dolore magna aliqua.'
+    blogs = []
     return {
-        '__template__': 'test.html',
-        'users': users
+        '__template__': 'blogs.html',
+        'users': blogs
     }
